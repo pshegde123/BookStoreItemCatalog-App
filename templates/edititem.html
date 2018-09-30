@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block block2 %}
+    <form action="{{url_for('editItem',catalog_id=catalog_id, items_id=item.id)}}" method="POST">
+      <h2>Edit Book Item</h2>
+      <div class="form-group">
+        <lable for="itemname">Name:</label>
+        <input type="text" class="form-control" size="30" id="itemname" name="name" placeholder='{{item.name }}'>
+      </div>
+      <div class="form-group">
+        <label for="itemdescription">Description:</label>
+        <input class="form-control" type="text" size="30" id = "itemdescription" name="description" placeholder='{{ item.description }}'>
+      </div>
+      <div class="form-group">
+          <label for="catalog_id" >Category</label>
+          <select class="custom-select" id="catalog_id" name="catalog_id" placeholder='{{ item.catalog }}'>
+          <option value="1">Fiction</option>
+          <option value="2">Teens</option>
+          <option value="3">Young readers</option>
+          <option value="4">Comics</option>
+          <option value="5">Graphic Novels</option>
+          <option value="6">Magazines</option>
+          </select>
+      </div>
+        <br>
+        <br>
+        <input class="btn btn-md btn-primary" type="submit" name="Edit"></input> 
+        <a class="btn btn-md btn-primary" href = "{{url_for('showCatalog')}}">Cancel</a>
+    </form>
+{% endblock %}

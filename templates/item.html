@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block block2 %}
+		<a href="https://en.wikipedia.org/wiki/{{items.name}}" style="color:#ff6600;font-size: 1.2rem"><img src="{{ url_for('static', filename="wikipedia-icon.png") }}" alt="wikipedia link" width="40" height="40"></img>  {{items.name}}  </a>
+		<p>{{items.description}}</p>
+		<br>
+		<a class="btn btn-md btn-primary" href = {{url_for('showCatalog')}}>Home</a>
+	  	<a class="btn btn-md btn-primary" href = {{url_for('editItem',catalog_id=catalog.id, items_id=items.id)}}>Edit</a>
+	  	<a class="btn btn-md btn-primary" href = {{url_for('deleteItem',catalog_id=catalog.id, items_id=items.id)}}>Delete</a>
+{% endblock %}

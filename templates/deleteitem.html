@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block block2 %}
+<h2>Delete Item</h2>
+<p>Are you sure you want to delete "{{item.name}}" from "{{item.catalog.name}}"?</p>
+<form action="{{url_for('deleteItem' ,catalog_id=catalog_id, items_id=items_id)}}" method="POST">&nbsp
+  <input class="btn btn-md btn-primary" type="submit" name="Delete"></input> 
+  <a class="btn btn-md btn-primary" href = "{{url_for('showCatalog')}}">Cancel</a>
+  </br></br>
+</form>
+{% endblock %}

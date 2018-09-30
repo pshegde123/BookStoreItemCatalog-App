@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h2>Catalog</h2>
+	<ul>
+		{% for i in catalog %}
+		<li>
+		<a href={{url_for('showCategories',catalog_id=i.id)}}>{{i.name}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block block2 %}
+  <h2> Recent additions </h2>
+  <ul>
+    {% for i in items %}
+    <li>
+      <a href={{ url_for('showItem',catalog_id=i.catalog_id,items_id=i.id) }}>{{i.name}} - <i class="text-muted">{{i.catalog.name}}</i></a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

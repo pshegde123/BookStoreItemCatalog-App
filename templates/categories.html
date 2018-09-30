@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h2>Catalog</h2>
+	<ul>
+		{% for i in catalog %}
+		<li>
+		<a href={{url_for('showCategories',catalog_id=i.id)}}>{{i.name}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block block2 %}
+	<br>
+	<div class="alert alert-success" role="alert">
+	  {{current_catalog.name}}
+	</div>
+	{% for i in items %}
+	<li><a href={{ url_for('showItem',catalog_id=i.id,items_id=i.id) }}>{{i.name}}</a></li>
+	{% endfor %}
+{% endblock %}

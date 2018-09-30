@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body> 
+	<div class="container">
+	<header class="blog-header py-3">
+		<div class="row flex-wrap justify-content-start align-items-start">
+ 	        <div class="col-1 text-start">
+    	    	<img class="logo" src="{{ url_for('static', filename='booklogo.png') }}" alt="book logo" height="50" width="50">
+        	</div>			
+ 	        <div class="col-7 text-start">
+    	    	<a class="blog-header-logo text-dark" href="#">Book Store Catalog App</a>
+        	</div>
+          	<div class="col-3 d-flex justify-content-end align-items-center">
+	   		{%if 'username' not in session %}
+			<a class="btn btn-dark btn-outline-danger" href="{{url_for('showLogin')}}">Login</a>
+			{% else %}
+			<a class="btn btn-dark btn-outline-danger" href="{{url_for('disconnect')}}">Logout</a>
+			{% endif %}
+          </div>
+        </div>
+	</header>
+
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+    	<ul class="flash">
+      	{% for message in messages %}
+      	<p align="center"><strong>{{message}}</strong></p>
+      	{% endfor %}
+    	</ul>
+    	{% endif %}
+    	{% endwith %}
+
+		<div class="row border-between">	
+			<div class="col-md-3" >
+				{% block content%}
+				{% endblock %}
+			</div>
+			<div class="col-md-9 col-border">
+				<div class = "col-border-padding">
+				{% block block2 %}
+				{% endblock %}
+				</div>				
+			</div>
+		</div>
+	</div>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</body>
+</html>
