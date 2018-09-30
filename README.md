@@ -13,17 +13,17 @@ Users can perform CRUD operations on this catalog by logging in the application 
 	*This program need to be run on a virtual machine (VM), to setup the VM please check following steps.
 
 ### Prerequisites
-	*[Git](https://git-scm.com/downloads) : 
+	* [Git](https://git-scm.com/downloads) : 
 	On Windows, Git will provide you with a Unix-style terminal and shell (Git Bash). 
 	You will need Git to install the configuration for the VM. 
 
-	*[VirtualBox](https://www.virtualbox.org/wiki/Downloads):
+	* [VirtualBox](https://www.virtualbox.org/wiki/Downloads):
 	VirtualBox is the software that actually runs the VM.
 
-	*[Vagrant](https://www.vagrantup.com/downloads.html):
+	* [Vagrant](https://www.vagrantup.com/downloads.html):
 	Vagrant is the software that configures the VM.
 
-	*Run the virtual machine: Using the terminal, change directory to catalog/vagrant (cd fullstack/vagrant), then type `<$vagrant up>` to launch your virtual machine.Once it is up and running, type `<$vagrant ssh>` to log into it. This will log your terminal in to the virtual machine, and you'll get a Linux shell prompt. Change to the /vagrant directory by typing `<cd /vagrant>`. 
+	* Run the virtual machine: Using the terminal, change directory to catalog/vagrant (cd fullstack/vagrant), then type `<$vagrant up>` to launch your virtual machine.Once it is up and running, type `<$vagrant ssh>` to log into it. This will log your terminal in to the virtual machine, and you'll get a Linux shell prompt. Change to the /vagrant directory by typing `<cd /vagrant>`. 
 
 ### Usage:
 	(1) After completing prerequisites, start the application web server by entering
